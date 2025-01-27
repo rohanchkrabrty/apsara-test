@@ -2,40 +2,154 @@
 title: Link
 description: Display a hyperlink component
 ---
+
 ## Preview
 
 <Preview>
-  <Flex
-    style={{
-      alignItems: "center",
-      flexDirection: "column",
-      gap: "8px",
-    }}
-  >
-    <Link size="small" href="#">Hyperlink</Link>
-    <Link size="medium" href="#">Hyperlink</Link>
-    <Link size="large" href="#">Hyperlink</Link>
+  <Flex style={{ gap: "24px", flexDirection: "column" }}>
+    <Flex style={{ gap: "16px" }}>
+      <Link size="small" href="#">
+        Small Link
+      </Link>
+      <Link size="medium" href="#">
+        Medium Link
+      </Link>
+      <Link size="large" href="#">
+        Large Link
+      </Link>
+    </Flex>
+    <Flex style={{ gap: "16px" }}>
+      <Link href="#" external>
+        External Link
+      </Link>
+      <Link href="#" disabled>
+        Disabled Link
+      </Link>
+    </Flex>
   </Flex>
 </Preview>
+
+## Usage
+
+The Link component is used for navigation and actions that navigate to other pages or external resources.
 
 ## Installation
 
 Install the component from your command line.
 
 <LiveProvider>
-    <LiveEditor code={`npm install @raystack/apsara`} border/>
+  <LiveEditor code={`npm install @raystack/apsara`} border language="shell" />
 </LiveProvider>
-
-
-## Anatomy
-Import all parts and piece them together.
 
 <LiveProvider>
-    <LiveEditor code={`
-import { Link } from '@raystack/apsara'
+  <LiveEditor code={`import { Link } from '@raystack/apsara/v1'
 
-<Link size="small" href="#">Hyperlink</Link>
-<Link size="medium" href="#">Hyperlink</Link>
-<Link size="large" href="#">Hyperlink</Link>
-`} border />
+// Basic usage
+
+<Link href="/about">About</Link>
+
+// External link
+
+<Link href="https://example.com" external>
+  External Website
+</Link>`} border/>
 </LiveProvider>
+
+## Props
+
+The Link component accepts the following props:
+
+- `size`: Defines the size of the link (`"small"` | `"medium"` | `"large"`, default: "medium")
+- `external`: Boolean to indicate if the link opens in a new tab
+- `href`: The URL that the link points to
+- `className`: Additional CSS class names
+- All standard HTML anchor (`<a>`) attributes
+
+## Sizes
+
+The Link component comes in three sizes to match different design contexts.
+
+<Playground
+  scope={{ Link }}
+  tabs={[
+    {
+      name: "Small",
+      code: `<Link size="small" href="#">Small Link</Link>`,
+    },
+    {
+      name: "Medium",
+      code: `<Link size="medium" href="#">Medium Link</Link>`,
+    },
+    {
+      name: "Large",
+      code: `<Link size="large" href="#">Large Link</Link>`,
+    },
+  ]}
+/>
+
+## External Links
+
+Links can be configured to open in a new tab with proper security attributes.
+
+<Playground
+  scope={{ Link }}
+  code={`
+<Link href="https://example.com" external>
+  External Website
+</Link>
+  `}
+/>
+
+## Accessibility
+
+The Link component follows accessibility best practices:
+
+- Uses semantic HTML `<a>` element
+- Maintains proper color contrast
+- Includes proper focus states
+- Adds appropriate attributes for external links
+- Supports keyboard navigation
+
+## Examples
+
+### Basic Navigation
+
+<Playground
+  scope={{ Link }}
+  code={`
+<Flex style={{ gap: '16px' }}>
+  <Link href="/home">Home</Link>
+  <Link href="/about">About</Link>
+  <Link href="/contact">Contact</Link>
+</Flex>
+  `}
+/>
+
+### Mixed Sizes
+
+<Playground
+  scope={{ Link }}
+  code={`
+<Flex style={{ gap: '16px', alignItems: 'center' }}>
+  <Link size="small" href="#">Small</Link>
+  <Link size="medium" href="#">Medium</Link>
+  <Link size="large" href="#">Large</Link>
+</Flex>
+  `}
+/>
+
+### External Links
+
+<Playground
+  scope={{ Link }}
+  code={`
+<Flex style={{ gap: '16px' }}>
+  <Link href="https://example.com" external>
+    Documentation
+  </Link>
+  <Link href="https://github.com" external>
+    GitHub
+  </Link>
+</Flex>
+  `}
+/>

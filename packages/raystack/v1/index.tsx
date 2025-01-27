@@ -16,6 +16,7 @@ export { Flex } from "./components/flex";
 export { IconButton } from "./components/icon-button";
 export { Indicator } from "./components/indicator";
 export { InputField } from "./components/input-field";
+export { Link } from "./components/link";
 export { Radio } from "./components/radio";
 export { Sidepanel } from "./components/sidepanel";
 export { Spinner } from "./components/spinner";

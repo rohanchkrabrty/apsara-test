@@ -1,0 +1,36 @@
+.link {
+  flex-shrink: 0;
+  outline: 0;
+  cursor: pointer;
+  text-decoration-line: none;
+  text-underline-offset: var(--rs-space-1);
+  color: var(--rs-color-text-base-primary);
+  margin-right: var(--rs-space-3);
+}
+
+.link:hover {
+  text-decoration-line: underline;
+}
+
+.link:focus {
+  outline: 0;
+  text-decoration-line: underline;
+}
+
+.link-small {
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
+
+.link-medium {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
+
+.link-large {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+} 

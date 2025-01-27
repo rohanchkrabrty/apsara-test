@@ -7,7 +7,7 @@ import {
   useTable
 } from "@raystack/apsara";
 
-import { toast, ToastContainer, Avatar, AvatarGroup, Button, Spinner, DropdownMenu, Breadcrumb, Chip, Flex, Text, Checkbox, InputField, Badge, Radio, Search } from "@raystack/apsara/v1";
+import { toast, ToastContainer, Avatar, AvatarGroup, Button, Spinner, DropdownMenu, Breadcrumb, Chip, Flex, Text, Checkbox, InputField, Badge, Radio, Search, Link } from "@raystack/apsara/v1";
 
 import { getData, Payment } from "./data";
 import { ApsaraColumnDef } from "@raystack/apsara/table/datatables.types";
@@ -186,6 +186,12 @@ export const Assets = () => {
             <Title>Assets</Title>
             <Button>Create Asset</Button>
           </Flex>
+
+          <div>
+            <Link size="small" href="/assets">View All Assets</Link>
+            <Link size="medium" href="https://docs.raystack.org" external>Documentation</Link>
+            <Link size="large" href="https://docs.raystack.org" external>Documentation</Link>
+          </div>
 
           <InputField
             label="Label"
