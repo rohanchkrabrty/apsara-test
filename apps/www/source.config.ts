@@ -5,9 +5,20 @@ import {
   defineDocs,
   frontmatterSchema
 } from 'fumadocs-mdx/config';
-import { createGenerator, remarkAutoTypeTable } from 'fumadocs-typescript';
+import { createGenerator, GeneratorOptions, remarkAutoTypeTable } from 'fumadocs-typescript';
+import * as path from 'node:path';
+import { fileURLToPath } from 'url';
 
-const generator = createGenerator();
+const relative = (s: string): string =>
+  path.resolve(fileURLToPath(new URL(s, import.meta.url)));
+
+const tsconfig: GeneratorOptions = {
+  tsconfigPath: relative('../tsconfig.json'),
+  basePath: relative('../'),
+  cache: false,
+};
+
+const generator = createGenerator(tsconfig);
 
 export const docs = defineDocs({
   dir: 'src/content/docs',
