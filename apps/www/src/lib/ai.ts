@@ -1,5 +1,5 @@
-import { promises as fs } from 'fs';
-import path from 'path';
+import * as fs from 'node:fs/promises';
+import * as path from 'node:path';
 import { docs } from '@/lib/source';
 import type { InferPageType } from 'fumadocs-core/source';
 import { remarkAutoTypeTable } from 'fumadocs-typescript';
