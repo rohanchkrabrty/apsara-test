@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prebuild": "cd ../.. && npm run build:apsara",
-    "build": "next build",
+    "build": "mkdir -p .next/fumadocs-typescript && next build",
     "dev": "next dev",
     "start": "next start",
     "postinstall": "fumadocs-mdx"
