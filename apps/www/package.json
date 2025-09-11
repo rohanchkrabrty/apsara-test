@@ -10,7 +10,7 @@
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
-    "@raystack/apsara": "workspace:*",
+    "@raystack/apsara": "^v0.50.0",
     "class-variance-authority": "^0.7.1",
     "dayjs": "^1.11.11",
     "fumadocs-core": "^14.7.7",
