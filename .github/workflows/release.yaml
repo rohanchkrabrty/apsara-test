@@ -47,5 +47,31 @@ jobs:
           CI: ""
         run: pnpm run ci:build
 
-      - name: Success
-        run: echo "Release successful"
+      - name: Create .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Bump Package Version
+        run: pnpm run bump-version
+        working-directory: ./packages/raystack
+        env:
+          GIT_REFNAME: ${{ github.ref_name }}
+
+      - name: Publish to NPM 🚀
+        run: pnpm publish --access public --no-git-checks --tag latest
+        working-directory: ./packages/raystack
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Generate GitHub Release Notes 📓
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --repo "$GITHUB_REPOSITORY" \
+            --generate-notes \
+            --verify-tag

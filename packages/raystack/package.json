@@ -1,5 +1,5 @@
 {
-  "name": "@raystack/apsara",
+  "name": "@rohan/test",
   "version": "0.48.0",
   "types": "dist/index.d.ts",
   "sideEffects": false,
@@ -30,10 +30,7 @@
     "./style.css": "./dist/style.css",
     "./normalize.css": "./dist/normalize.css"
   },
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "scripts": {
     "prebuild": "npm run clean",
     "build": "rollup --config",
@@ -52,12 +49,8 @@
   },
   "typesVersions": {
     "*": {
-      "*": [
-        "./dist/index.d.ts"
-      ],
-      "v1": [
-        "./dist/index.d.ts"
-      ]
+      "*": ["./dist/index.d.ts"],
+      "v1": ["./dist/index.d.ts"]
     }
   },
   "keywords": [
