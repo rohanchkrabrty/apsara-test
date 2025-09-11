@@ -33,7 +33,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run tests
-        run: pnpm --filter=@rohan/test test
+        run: pnpm --filter=rohan-test-cmpnt test
 
       - name: Check build
         run: pnpm build:apsara

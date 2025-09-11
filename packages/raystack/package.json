@@ -1,5 +1,5 @@
 {
-  "name": "@rohan/test",
+  "name": "rohan-test-cmpnt",
   "version": "0.48.0",
   "types": "dist/index.d.ts",
   "sideEffects": false,

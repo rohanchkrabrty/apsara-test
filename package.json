@@ -3,14 +3,14 @@
   "scripts": {
     "start": "concurrently \"cd packages/raystack && pnpm dev\" \"cd apps/www && pnpm dev\"",
     "build": "turbo build",
-    "test:apsara": "pnpm --filter=@rohan/test test",
-    "build:apsara": "turbo build --filter=@rohan/test",
-    "dev": "turbo dev --filter=@rohan/test",
-    "lint": "turbo lint --filter=@rohan/test",
-    "clean": "turbo clean --filter=@rohan/test",
+    "test:apsara": "pnpm --filter=rohan-test-cmpnt test",
+    "build:apsara": "turbo build --filter=rohan-test-cmpnt",
+    "dev": "turbo dev --filter=rohan-test-cmpnt",
+    "lint": "turbo lint --filter=rohan-test-cmpnt",
+    "clean": "turbo clean --filter=rohan-test-cmpnt",
     "format": "pnpm exec biome check --staged --write .",
-    "ci:build": "turbo build --filter=@rohan/test",
-    "ci:release": "turbo release --filter=@rohan/test -- --ci --no-increment"
+    "ci:build": "turbo build --filter=rohan-test-cmpnt",
+    "ci:release": "turbo release --filter=rohan-test-cmpnt -- --ci --no-increment"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
